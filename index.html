@@ -1,21 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Calculadora</title>
+    <title>Calculadora con Botones</title>
+    <style>
+        button {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
-    <input type="number" id="num1">
-    <select id="operacion">
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="/">/</option>
-        <option value="*">*</option>
-    </select>
-    <input type="number" id="num2">
- 
-    <button onclick="mostrarResultado()">=</button>
+    <h2>Calculadora</h2>
+    <p id="pantalla"></p>
     <p id="resultado"></p>
-    
+
+    <!-- Botones numéricos -->
+    <div id="botones">
+        <button onclick="ingresar('0')">0</button>
+        <button onclick="ingresar('1')">1</button>
+        <button onclick="ingresar('2')">2</button>
+        <button onclick="ingresar('3')">3</button>
+        <button onclick="ingresar('4')">4</button>
+        <button onclick="ingresar('5')">5</button>
+        <button onclick="ingresar('6')">6</button>
+        <button onclick="ingresar('7')">7</button>
+        <button onclick="ingresar('8')">8</button>
+        <button onclick="ingresar('9')">9</button>
+        <button onclick="ingresar('O')">O</button> <!-- Separador entre operandos -->
+
+        <!-- Operaciones -->
+        <button onclick="ingresar('+')">+</button>
+        <button onclick="ingresar('-')">-</button>
+        <button onclick="ingresar('*')">*</button>
+        <button onclick="ingresar('/')">/</button>
+
+        <!-- Funciones especiales -->
+        <button onclick="borrarUltimo()"><=</button>
+        <button onclick="calcular()">=</button>
+        <button onclick="guardarMemoria()">M+</button>
+        <button onclick="usarMemoria()">M</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
